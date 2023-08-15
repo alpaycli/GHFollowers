@@ -19,4 +19,6 @@ struct User: Codable {
     let followers: Int
     let following: Int
     let createdAt: Date
+    
+    static let example = User(login: "", avatarUrl: "", htmlUrl: "", publicRepos: 0, publicGists: 0, followers: 0, following: 0, createdAt: Date.now)
 }

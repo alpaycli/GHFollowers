@@ -18,6 +18,10 @@
 		C9C3F2512A8A4DBF00241F16 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2502A8A4DBF00241F16 /* Follower.swift */; };
 		C9C3F2532A8A4DC300241F16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2522A8A4DC300241F16 /* User.swift */; };
 		C9C3F2572A8A4E0B00241F16 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2562A8A4E0B00241F16 /* FavoritesView.swift */; };
+		C9C3F2632A8B9CDE00241F16 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2622A8B9CDE00241F16 /* UserInfoView.swift */; };
+		C9C3F2682A8BA62400241F16 /* UserInfoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */; };
+		C9C3F26B2A8BC66B00241F16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F26A2A8BC66B00241F16 /* Constants.swift */; };
+		C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		C9C3F2502A8A4DBF00241F16 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		C9C3F2522A8A4DC300241F16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9C3F2562A8A4E0B00241F16 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		C9C3F2622A8B9CDE00241F16 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoContainerView.swift; sourceTree = "<group>"; };
+		C9C3F26A2A8BC66B00241F16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,9 @@
 			children = (
 				C9C3F2332A89683100241F16 /* GHFollowersApp.swift */,
 				C9C3F2352A89683100241F16 /* ContentView.swift */,
+				C9C3F26C2A8BC77400241F16 /* Extensions */,
+				C9C3F2692A8BC66500241F16 /* Files */,
+				C9C3F2662A8BA5FF00241F16 /* ViewComponents */,
 				C9C3F2592A8A4E3700241F16 /* Networking */,
 				C9C3F2542A8A4DED00241F16 /* Models */,
 				C9C3F2582A8A4E1B00241F16 /* Views */,
@@ -107,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C3F2452A896DF300241F16 /* FollowerListView.swift */,
+				C9C3F2622A8B9CDE00241F16 /* UserInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +130,30 @@
 				C9C3F2432A896D7A00241F16 /* FollowersFetcher.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C9C3F2662A8BA5FF00241F16 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		C9C3F2692A8BC66500241F16 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9C3F26A2A8BC66B00241F16 /* Constants.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		C9C3F26C2A8BC77400241F16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C3F2682A8BA62400241F16 /* UserInfoContainerView.swift in Sources */,
 				C9C3F24F2A8A4DA900241F16 /* NetworkManager.swift in Sources */,
+				C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */,
 				C9C3F2512A8A4DBF00241F16 /* Follower.swift in Sources */,
 				C9C3F2362A89683100241F16 /* ContentView.swift in Sources */,
 				C9C3F2462A896DF300241F16 /* FollowerListView.swift in Sources */,
@@ -199,6 +237,8 @@
 				C9C3F2342A89683100241F16 /* GHFollowersApp.swift in Sources */,
 				C9C3F2442A896D7A00241F16 /* FollowersFetcher.swift in Sources */,
 				C9C3F2572A8A4E0B00241F16 /* FavoritesView.swift in Sources */,
+				C9C3F2632A8B9CDE00241F16 /* UserInfoView.swift in Sources */,
+				C9C3F26B2A8BC66B00241F16 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

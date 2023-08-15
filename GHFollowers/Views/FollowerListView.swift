@@ -11,13 +11,24 @@ struct FollowerListView: View {
     
     @StateObject private var followersFetcher: FollowersFetcher
     
-    
     let username: String
+    
+    @State private var searchText = ""
+    var filteredFollowers: [Follower] {
+        if searchText.isEmpty {
+            return followersFetcher.followers
+        } else {
+            return followersFetcher.followers.filter { $0.login.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+        
+    }
     
     let columns = [
         GridItem(.adaptive(minimum: 120))
     ]
     
+    @State private var selectedFollower: Follower?
     
     init(username: String) {
         self.username = username
@@ -30,25 +41,19 @@ struct FollowerListView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(followersFetcher.followers, id: \.self) { item in
-                    VStack {
-                        AsyncImage(url: URL(string: item.avatarUrl)) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100)
-                                .cornerRadius(10)
-                        } placeholder: {
-                            ProgressView()
+                ForEach(filteredFollowers, id: \.self) { item in
+                   
+                        VStack {
+                            
+                            
+                            Button(item.login) { selectedFollower = item }
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                                .lineLimit(1)
+                                .frame(height: 10)
                         }
-
-                        Text(item.login)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                            .lineLimit(1)
-                            .frame(height: 10)
-                    }
-                    .padding()
+                        .padding()
+                    
                 }
             }
             .task {
@@ -56,6 +61,10 @@ struct FollowerListView: View {
             }
             .navigationTitle(username)
             .navigationBarTitleDisplayMode(.large)
+            .searchable(text: $searchText)
+            .sheet(item: $selectedFollower) { item in
+                UserInfoView(username: item.login)
+            }
         }
     }
 }
