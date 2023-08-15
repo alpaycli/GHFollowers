@@ -56,11 +56,11 @@ struct UserInfoView: View {
                 .padding(.top, 40)
                 
                 Section {
-                    UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Repos", leftSideAmount: user.publicGists, rightSideAmount: user.publicRepos, buttonText: "Go to GitHub", buttonColor: .purple, leftSideSFSymbol: SFSymbols.gists, rightSideSFSymbol: SFSymbols.repos)
+                    UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Repos", leftSideAmount: user.publicGists, rightSideAmount: user.publicRepos, buttonText: "Go to GitHub", buttonColor: .purple, leftSideSFSymbol: SFSymbols.gists, rightSideSFSymbol: SFSymbols.repos, username: username)
                         .frame(height: 100)
                         .padding(.vertical, 25)
                     
-                    UserInfoContainerView(leftSideText: "Following", rightSideText: "Followers", leftSideAmount: user.following, rightSideAmount: user.followers, buttonText: "Get Followers", buttonColor: .blue, leftSideSFSymbol: SFSymbols.following, rightSideSFSymbol: SFSymbols.followers)
+                    UserInfoContainerView(leftSideText: "Following", rightSideText: "Followers", leftSideAmount: user.following, rightSideAmount: user.followers, buttonText: "Get Followers", buttonColor: .blue, leftSideSFSymbol: SFSymbols.following, rightSideSFSymbol: SFSymbols.followers, username: username)
                 }
                 
             }

@@ -5,6 +5,7 @@
 //  Created by Alpay Calalli on 15.08.23.
 //
 
+import SafariServices
 import SwiftUI
 
 struct UserInfoContainerView: View {
@@ -20,7 +21,12 @@ struct UserInfoContainerView: View {
     let buttonText: String
     let buttonColor: Color
     
-    init(leftSideText: String, rightSideText: String, leftSideAmount: Int, rightSideAmount: Int, buttonText: String, buttonColor: Color, leftSideSFSymbol: Image, rightSideSFSymbol: Image) {
+    var username: String
+    
+    @State var isPresentWebView: Bool = false
+    @State var isPresentFollowersList: Bool = false
+    
+    init(leftSideText: String, rightSideText: String, leftSideAmount: Int, rightSideAmount: Int, buttonText: String, buttonColor: Color, leftSideSFSymbol: Image, rightSideSFSymbol: Image, username: String) {
         self.leftSideText = leftSideText
         self.rightSideText = rightSideText
         self.leftSideAmount = leftSideAmount
@@ -29,8 +35,8 @@ struct UserInfoContainerView: View {
         self.buttonColor = buttonColor
         self.leftSideSFSymbol = leftSideSFSymbol
         self.rightSideSFSymbol = rightSideSFSymbol
+        self.username = username
     }
-    
     
     var maxWidth = UIScreen.main.bounds.size.width
     
@@ -55,11 +61,19 @@ struct UserInfoContainerView: View {
                 }
             }
             
-            Button(buttonText) { }
-                .frame(width: maxWidth - 80, height: 40)
-                .background(buttonColor)
-                .cornerRadius(10)
-                .foregroundColor(.white)
+            Button(buttonText) {
+                if buttonColor == .purple { isPresentWebView = true }
+                else { isPresentFollowersList = true }
+            }
+            .fullScreenCover(isPresented: $isPresentWebView) {
+                let url = "https://github.com/" + username
+                SafariWebView(url: URL(string: url)!)
+                    .ignoresSafeArea()
+            }
+            .frame(width: maxWidth - 80, height: 40)
+            .background(buttonColor)
+            .cornerRadius(10)
+            .foregroundColor(.white)
             
          }
         .padding()
@@ -73,6 +87,20 @@ struct UserInfoContainerView: View {
 
 struct UserInfoContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Gists", leftSideAmount: 3, rightSideAmount: 5, buttonText: "Go to Github", buttonColor: .red, leftSideSFSymbol: Image(systemName: "person.2"), rightSideSFSymbol: Image(systemName: "person.2"))
+        UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Gists", leftSideAmount: 3, rightSideAmount: 5, buttonText: "Go to Github", buttonColor: .red, leftSideSFSymbol: Image(systemName: "person.2"), rightSideSFSymbol: Image(systemName: "person.2"), username: "sallen0400")
+    }
+}
+
+
+
+struct SafariWebView: UIViewControllerRepresentable {
+    let url: URL
+    
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {
+        
     }
 }
