@@ -18,7 +18,9 @@ struct FavoritesView: View {
                 } else {
                     List {
                         ForEach(favorites) { item in
-                            FavoritesItemView(follower: item)
+                            NavigationLink(destination: FollowerListView(username: item.login)) {
+                                FavoritesItemView(follower: item)
+                            }
                         }
                     }
                 }

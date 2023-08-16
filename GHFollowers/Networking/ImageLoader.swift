@@ -10,7 +10,7 @@ import SwiftUI
 class ImageLoader: ObservableObject {
     let urlString: String
     
-    @Published var image: UIImage = UIImage(systemName: "person.2")!
+    @Published var image: UIImage = Images.placeholder
     @Published var isLoading = false
     
     init(urlString: String) {

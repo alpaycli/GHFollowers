@@ -17,7 +17,7 @@ struct SearchView: View {
             VStack {
                 Spacer()
                 
-                Image("gh-logo")
+                Images.ghLogo
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200)
