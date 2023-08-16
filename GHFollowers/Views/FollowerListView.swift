@@ -30,10 +30,10 @@ struct FollowerListView: View {
     
     @State private var selectedFollower: Follower?
     
+    private let manager = NetworkManager()
     init(username: String) {
         self.username = username
-        let manager = NetworkManager()
-        _followersFetcher = StateObject(wrappedValue: FollowersFetcher(manager: manager))
+        _followersFetcher = StateObject(wrappedValue: FollowersFetcher())
     }
     
     private let baseURL = "https://api.github.com/users/"
@@ -42,18 +42,13 @@ struct FollowerListView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(filteredFollowers, id: \.self) { item in
-                   
-                        VStack {
-                            
-                            
-                            Button(item.login) { selectedFollower = item }
-                                .fontWeight(.bold)
-                                .font(.system(size: 14))
-                                .lineLimit(1)
-                                .frame(height: 10)
-                        }
-                        .padding()
-                    
+                    Button {
+                        selectedFollower = item
+                    } label: {
+                        FollowerItemView(follower: item)
+                            .padding(.vertical, 10)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
             .task {

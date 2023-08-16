@@ -5,10 +5,10 @@
 //  Created by Alpay Calalli on 14.08.23.
 //
 
-import Foundation
+import SwiftUI
 
 class NetworkManager {
-    
+        
     func fetch<T: Decodable>(_ type: T.Type, url: URL) async throws -> T {
         
         let (data, response) = try await URLSession.shared.data(from: url)

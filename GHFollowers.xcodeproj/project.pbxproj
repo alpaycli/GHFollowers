@@ -22,6 +22,8 @@
 		C9C3F2682A8BA62400241F16 /* UserInfoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */; };
 		C9C3F26B2A8BC66B00241F16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F26A2A8BC66B00241F16 /* Constants.swift */; };
 		C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */; };
+		C9C3F2722A8CF47B00241F16 /* FollowerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */; };
+		C9C3F2742A8CF6DB00241F16 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoContainerView.swift; sourceTree = "<group>"; };
 		C9C3F26A2A8BC66B00241F16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerItemView.swift; sourceTree = "<group>"; };
+		C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C3F2452A896DF300241F16 /* FollowerListView.swift */,
+				C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */,
 				C9C3F2622A8B9CDE00241F16 /* UserInfoView.swift */,
 			);
 			path = Views;
@@ -128,6 +133,7 @@
 			children = (
 				C9C3F24E2A8A4DA900241F16 /* NetworkManager.swift */,
 				C9C3F2432A896D7A00241F16 /* FollowersFetcher.swift */,
+				C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			files = (
 				C9C3F2682A8BA62400241F16 /* UserInfoContainerView.swift in Sources */,
 				C9C3F24F2A8A4DA900241F16 /* NetworkManager.swift in Sources */,
+				C9C3F2742A8CF6DB00241F16 /* ImageLoader.swift in Sources */,
 				C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */,
 				C9C3F2512A8A4DBF00241F16 /* Follower.swift in Sources */,
 				C9C3F2362A89683100241F16 /* ContentView.swift in Sources */,
@@ -239,6 +246,7 @@
 				C9C3F2572A8A4E0B00241F16 /* FavoritesView.swift in Sources */,
 				C9C3F2632A8B9CDE00241F16 /* UserInfoView.swift in Sources */,
 				C9C3F26B2A8BC66B00241F16 /* Constants.swift in Sources */,
+				C9C3F2722A8CF47B00241F16 /* FollowerItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

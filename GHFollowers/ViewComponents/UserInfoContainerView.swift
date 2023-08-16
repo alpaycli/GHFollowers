@@ -38,7 +38,7 @@ struct UserInfoContainerView: View {
         self.username = username
     }
     
-    var maxWidth = UIScreen.main.bounds.size.width
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -63,21 +63,24 @@ struct UserInfoContainerView: View {
             
             Button(buttonText) {
                 if buttonColor == .purple { isPresentWebView = true }
-                else { isPresentFollowersList = true }
+                else {
+                    dismiss()
+                    
+                }
             }
             .fullScreenCover(isPresented: $isPresentWebView) {
                 let url = "https://github.com/" + username
                 SafariWebView(url: URL(string: url)!)
                     .ignoresSafeArea()
             }
-            .frame(width: maxWidth - 80, height: 40)
+            .frame(width: ScreenSize.width - 80, height: 40)
             .background(buttonColor)
             .cornerRadius(10)
             .foregroundColor(.white)
             
          }
         .padding()
-        .frame(width: maxWidth - 40)
+        .frame(width: ScreenSize.width - 40)
         .fontWeight(.bold)
         .background(Color(red: 0, green: 0, blue: 0, opacity: 0.05))
         .cornerRadius(10)

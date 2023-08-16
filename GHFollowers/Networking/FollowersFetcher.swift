@@ -13,11 +13,7 @@ class FollowersFetcher: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
-    private let manager: NetworkManager
-    
-    init(manager: NetworkManager) {
-        self.manager = manager
-    }
+    private let manager = NetworkManager()
     
     private let baseURL = "https://api.github.com/users/"
     
@@ -26,11 +22,12 @@ class FollowersFetcher: ObservableObject {
         
         guard let url = URL(string: endpoint) else { return }
         
+        print(url)
+        
         isLoading = true
         Task {
             do {
                 let followers = try await manager.fetch([Follower].self, url: url)
-                print(followers)
                 self.followers = followers
                 isLoading = false
                 errorMessage = nil

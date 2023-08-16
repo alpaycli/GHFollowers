@@ -17,7 +17,6 @@ struct UserInfoView: View {
         self.username = username
     }
     
-    var maxWidth = UIScreen.main.bounds.size.width
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -58,9 +57,10 @@ struct UserInfoView: View {
                 Section {
                     UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Repos", leftSideAmount: user.publicGists, rightSideAmount: user.publicRepos, buttonText: "Go to GitHub", buttonColor: .purple, leftSideSFSymbol: SFSymbols.gists, rightSideSFSymbol: SFSymbols.repos, username: username)
                         .frame(height: 100)
-                        .padding(.vertical, 25)
+                        .padding(.top, 30)
                     
                     UserInfoContainerView(leftSideText: "Following", rightSideText: "Followers", leftSideAmount: user.following, rightSideAmount: user.followers, buttonText: "Get Followers", buttonColor: .blue, leftSideSFSymbol: SFSymbols.following, rightSideSFSymbol: SFSymbols.followers, username: username)
+                        .padding(.vertical, 25)
                 }
                 
             }
@@ -74,7 +74,7 @@ struct UserInfoView: View {
             
             Spacer()
         }
-        .frame(width: maxWidth - 60)
+        .frame(width: ScreenSize.width - 60)
         .task {
             await fetchUser(for: username)
         }
