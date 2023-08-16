@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+protocol FollowerListViewDelegate {
+    func isRefreshFollowers(for username: String)
+}
+
 struct FollowerListView: View {
     
     @StateObject private var followersFetcher: FollowersFetcher
     
-    let username: String
+    @State private var username: String
     
     @State private var searchText = ""
     var filteredFollowers: [Follower] {
@@ -84,7 +88,7 @@ struct FollowerListView: View {
             }
             .searchable(text: $searchText)
             .sheet(item: $selectedFollower) { item in
-                UserInfoView(username: item.login)
+                UserInfoView(username: item.login, delegate: self)
             }
         }
     }
@@ -94,4 +98,14 @@ struct FollowerListView_Previews: PreviewProvider {
     static var previews: some View {
         FollowerListView(username: "SAllen0400")
     }
+}
+
+extension FollowerListView: FollowerListViewDelegate {
+    func isRefreshFollowers(for username: String) {
+        Task {
+            await followersFetcher.fetchFollowers(for: username)
+            self.username = username
+        }
+    }
+    
 }

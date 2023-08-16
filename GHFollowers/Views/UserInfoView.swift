@@ -7,15 +7,22 @@
 
 import SwiftUI
 
+protocol UserInfoViewDelegate {
+    func didTapGetFollowers(for username: String)
+}
+
 struct UserInfoView: View {
     private let manager = NetworkManager()
     let username: String
     
     @State private var user: User = User.example
     
-    init(username: String) {
+    init(username: String, delegate: FollowerListViewDelegate) {
         self.username = username
+        self.delegate = delegate
     }
+    
+    var delegate: FollowerListViewDelegate
     
     var body: some View {
         VStack {
@@ -55,11 +62,11 @@ struct UserInfoView: View {
                 .padding(.top, 40)
                 
                 Section {
-                    UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Repos", leftSideAmount: user.publicGists, rightSideAmount: user.publicRepos, buttonText: "Go to GitHub", buttonColor: .purple, leftSideSFSymbol: SFSymbols.gists, rightSideSFSymbol: SFSymbols.repos, username: username)
+                    UserInfoContainerView(leftSideText: "Public Gists", rightSideText: "Public Repos", leftSideAmount: user.publicGists, rightSideAmount: user.publicRepos, buttonText: "Go to GitHub", buttonColor: .purple, leftSideSFSymbol: SFSymbols.gists, rightSideSFSymbol: SFSymbols.repos, username: username, delegate: self)
                         .frame(height: 100)
                         .padding(.top, 30)
                     
-                    UserInfoContainerView(leftSideText: "Following", rightSideText: "Followers", leftSideAmount: user.following, rightSideAmount: user.followers, buttonText: "Get Followers", buttonColor: .blue, leftSideSFSymbol: SFSymbols.following, rightSideSFSymbol: SFSymbols.followers, username: username)
+                    UserInfoContainerView(leftSideText: "Following", rightSideText: "Followers", leftSideAmount: user.following, rightSideAmount: user.followers, buttonText: "Get Followers", buttonColor: .blue, leftSideSFSymbol: SFSymbols.following, rightSideSFSymbol: SFSymbols.followers, username: username, delegate: self)
                         .padding(.vertical, 25)
                 }
                 
@@ -95,12 +102,16 @@ struct UserInfoView: View {
             }
         }
     }
-    
-    
+}
+
+extension UserInfoView: UserInfoViewDelegate {
+    func didTapGetFollowers(for username: String) {
+        delegate.isRefreshFollowers(for: username)
+    }
 }
 
 struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView(username: "mecid")
+        UserInfoView(username: "mecid", delegate: self as! FollowerListViewDelegate)
     }
 }
