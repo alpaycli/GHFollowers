@@ -9,15 +9,16 @@ import SwiftUI
 
 struct FavoritesView: View {
     @State private var favorites: [Follower] = []
+    
     var body: some View {
         NavigationView {
             VStack {
                 if favorites.isEmpty {
                     Text("No favorites")
                 } else {
-                    Form {
+                    List {
                         ForEach(favorites) { item in
-                            FollowerItemView(follower: item)
+                            FavoritesItemView(follower: item)
                         }
                     }
                 }

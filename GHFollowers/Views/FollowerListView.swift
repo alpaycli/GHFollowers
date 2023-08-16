@@ -105,6 +105,7 @@ extension FollowerListView: FollowerListViewDelegate {
         Task {
             await followersFetcher.fetchFollowers(for: username)
             self.username = username
+
         }
     }
     

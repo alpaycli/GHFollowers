@@ -26,6 +26,7 @@
 		C9C3F2742A8CF6DB00241F16 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */; };
 		C9C3F2762A8D04C600241F16 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2752A8D04C600241F16 /* PersistenceManager.swift */; };
 		C9C3F2782A8D15DE00241F16 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2772A8D15DE00241F16 /* SafariView.swift */; };
+		C9C3F27A2A8D1ABA00241F16 /* FavoritesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2792A8D1ABA00241F16 /* FavoritesItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		C9C3F2752A8D04C600241F16 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		C9C3F2772A8D15DE00241F16 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		C9C3F2792A8D1ABA00241F16 /* FavoritesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */,
+				C9C3F2792A8D1ABA00241F16 /* FavoritesItemView.swift */,
 				C9C3F2672A8BA62400241F16 /* UserInfoContainerView.swift */,
 				C9C3F2772A8D15DE00241F16 /* SafariView.swift */,
 			);
@@ -253,6 +256,7 @@
 				C9C3F2782A8D15DE00241F16 /* SafariView.swift in Sources */,
 				C9C3F2572A8A4E0B00241F16 /* FavoritesView.swift in Sources */,
 				C9C3F2632A8B9CDE00241F16 /* UserInfoView.swift in Sources */,
+				C9C3F27A2A8D1ABA00241F16 /* FavoritesItemView.swift in Sources */,
 				C9C3F26B2A8BC66B00241F16 /* Constants.swift in Sources */,
 				C9C3F2722A8CF47B00241F16 /* FollowerItemView.swift in Sources */,
 			);
