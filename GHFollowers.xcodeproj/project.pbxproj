@@ -24,6 +24,7 @@
 		C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */; };
 		C9C3F2722A8CF47B00241F16 /* FollowerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */; };
 		C9C3F2742A8CF6DB00241F16 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */; };
+		C9C3F2762A8D04C600241F16 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3F2752A8D04C600241F16 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C9C3F26D2A8BC77F00241F16 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		C9C3F2712A8CF47B00241F16 /* FollowerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerItemView.swift; sourceTree = "<group>"; };
 		C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		C9C3F2752A8D04C600241F16 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				C9C3F24E2A8A4DA900241F16 /* NetworkManager.swift */,
 				C9C3F2432A896D7A00241F16 /* FollowersFetcher.swift */,
 				C9C3F2732A8CF6DB00241F16 /* ImageLoader.swift */,
+				C9C3F2752A8D04C600241F16 /* PersistenceManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				C9C3F2682A8BA62400241F16 /* UserInfoContainerView.swift in Sources */,
 				C9C3F24F2A8A4DA900241F16 /* NetworkManager.swift in Sources */,
 				C9C3F2742A8CF6DB00241F16 /* ImageLoader.swift in Sources */,
+				C9C3F2762A8D04C600241F16 /* PersistenceManager.swift in Sources */,
 				C9C3F26E2A8BC77F00241F16 /* Date+Ext.swift in Sources */,
 				C9C3F2512A8A4DBF00241F16 /* Follower.swift in Sources */,
 				C9C3F2362A89683100241F16 /* ContentView.swift in Sources */,

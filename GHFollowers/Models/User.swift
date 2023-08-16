@@ -8,6 +8,7 @@
 import Foundation
 
 struct User: Codable {
+    let id: Int
     let login: String
     var name: String?
     var location: String?
@@ -20,5 +21,5 @@ struct User: Codable {
     let following: Int
     let createdAt: Date
     
-    static let example = User(login: "", avatarUrl: "", htmlUrl: "", publicRepos: 0, publicGists: 0, followers: 0, following: 0, createdAt: Date.now)
+    static let example = User(id: 0, login: "", avatarUrl: "", htmlUrl: "", publicRepos: 0, publicGists: 0, followers: 0, following: 0, createdAt: Date.now)
 }
