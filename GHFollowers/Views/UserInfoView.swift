@@ -107,7 +107,7 @@ struct UserInfoView: View {
 extension UserInfoView: UserInfoViewDelegate {
     func didTapGetFollowers(for username: String) {
         if user.followers > 0 {
-            delegate.isRefreshFollowers(for: username)
+            delegate.isRefreshFollowers(for: username, page: 1)
         }
     }
 }

@@ -11,7 +11,6 @@ import SwiftUI
 struct SearchView: View {
     @State private var username: String = ""
     
-    var maxWidth = UIScreen.main.bounds.size.width
     var body: some View {
         NavigationView {
             VStack {
@@ -25,7 +24,7 @@ struct SearchView: View {
             
                 
                 TextField("Enter a username", text: $username)
-                    .frame(width: maxWidth - 100)
+                    .frame(width: ScreenSize.width - 100)
                     .textFieldStyle(.roundedBorder)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20))
@@ -37,7 +36,7 @@ struct SearchView: View {
                 
                 NavigationLink(destination: FollowerListView(username: username)) {
                     Text("Get Followers")
-                        .frame(width: maxWidth - 100, height: 50)
+                        .frame(width: ScreenSize.width - 100, height: 50)
                         .background(.green)
                         .foregroundColor(.white)
                         .fontWeight(.bold)
