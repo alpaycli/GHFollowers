@@ -56,11 +56,11 @@ struct FollowerListView: View {
                 
                 ProgressView()
                     .onAppear {
-                        if !filteredFollowers.isEmpty {
+                        guard !filteredFollowers.isEmpty, followersFetcher.hasMoreFollowers, !followersFetcher.isLoading else { return }
                             page += 1
                             Task { await followersFetcher.fetchFollowers(for: username, page: page) }
                         }
-                    }
+            
             }
             .task { await followersFetcher.fetchFollowers(for: username, page: page) }
             .navigationTitle(username)

@@ -23,11 +23,14 @@ struct SearchView: View {
                     .padding(.bottom, 40)
             
                 
-                TextField("Enter a username", text: $username)
-                    .frame(width: ScreenSize.width - 100)
-                    .textFieldStyle(.roundedBorder)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 20))
+//                TextField("Enter a username", text: $username)
+//                    .frame(width: ScreenSize.width - 100)
+//                    .textFieldStyle(.roundedBorder)
+//                    .multilineTextAlignment(.center)
+//                    .font(.system(size: 20))
+                
+                GFTextFieldWrapper(text: $username)
+                    .frame(width: ScreenSize.width - 100, height: 50)
                 
                 
                 Spacer()
